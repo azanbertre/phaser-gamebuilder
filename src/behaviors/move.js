@@ -2,7 +2,6 @@
  * Behavior movement for any object.
  */
 var move = function () {
-  console.log(this)
   if (this.behaviors.movement)
     this.anims.play(this.animations[this.behaviors.movement]);
   switch (this.currentMoveDirection) {
