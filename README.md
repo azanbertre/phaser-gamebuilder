@@ -13,7 +13,7 @@ The file will be found on the **dist** folder.
 
 ## Usage
 
-To check the demo just use ```npm demo``` or ```npm run demo-reload``` to auto compile project when changes are made.
+To check the demo just use ```npm run demo``` or ```npm run demo-reload``` to auto compile project when changes are made.
 
 ```javascript
 const Builder = new GameBuilder(); // Initialize a new game builder.
