@@ -1,4 +1,10 @@
 /**
+ * Require for all of the behaviors.
+ * @require
+ */
+require('./behaviors/*.js', {mode: 'expand'});
+
+/**
  * Create a new GameObject.
  * @constructor
  */
@@ -57,7 +63,7 @@ class GameObject extends Phaser.GameObjects.Sprite {
    * Call a function from the behavior library
    */
   call(functionName, params = null) {
-    let behavior = require('./behaviors/' + functionName);
+    let behavior = require('./behaviors/' + functionName + '.js');
     behavior.call(this, params);
   }
 

@@ -4,11 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "browserify -t require-globify ./index.js --s GameBuilder > ./dist/gamebuilder.js",
+    "demo": "browserify -t require-globify ./index.js --s GameBuilder > ./demo/js/gamebuilder.js && cd ./demo && node ./run.js",
+    "demo-reload": "concurrently --kill-others \"watchify -t require-globify ./index.js --s GameBuilder -o ./demo/js/gamebuilder.js\" \"cd ./demo && node ./run.js\""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "phaser": "^3.17.0"
+  },
+  "devDependencies": {
+    "browserify": "^16.5.0",
+    "concurrently": "^4.1.2",
+    "require-globify": "^1.4.1",
+    "watchify": "^3.11.1"
   }
 }
